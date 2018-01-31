@@ -32,5 +32,10 @@ public class TestjUnit44 {
 				"You earned 4 frequent renter points", bob.statement());
 		
 	}
+	
+	@Test
+	public void testCustomers() throws TestException{
+		
+	}
 
 }
