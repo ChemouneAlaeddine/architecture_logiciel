@@ -14,7 +14,10 @@ public class DefaultPricing implements Pricing {
 		return amount;
 	}
 	
-	public pointDeFidelite() {
+
+	public double pointDeFidelite() {
+		// TODO Auto-generated method stub
 		return 0;
 	}
+
 }

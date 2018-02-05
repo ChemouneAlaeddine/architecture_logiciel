@@ -62,7 +62,6 @@ public class Customers
 	result += "You earned " + String.valueOf(frequentRenterPoints) +
 	    " frequent renter points";
 	return result;
-	 
     }
 }
  
