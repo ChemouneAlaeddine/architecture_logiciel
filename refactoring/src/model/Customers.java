@@ -3,26 +3,22 @@ import java.util.*;
 
 public class Customers
 {
-    private String _name;
-    private Vector _rentals = new Vector();
+    protected String _name;
+    protected Vector _rentals = new Vector();
     
-    public Customers(String name)
-    {
+    public Customers(String name){
 	_name=name;
     }
     
-    public void addRental(Rental rental)
-    {
+    public void addRental(Rental rental){
 	_rentals.addElement(rental);
     }
     
-    public String getName()
-    {
+    public String getName(){
 	return _name;
     }
     
-    public String statement()
-    {
+    public String statement(){
 	double totalAmount = 0;
 	int frequentRenterPoints = 0;
 	Enumeration rentals=_rentals.elements();
