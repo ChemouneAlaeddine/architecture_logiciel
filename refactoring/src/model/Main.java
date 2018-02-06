@@ -20,7 +20,7 @@ public class Main {
 		System.out.println("- Le film "+rental2.getMovie().getTitle()+" de type "+
 						rental2.getMovie().CHILDRENS+" pendant "+rental2.getDaysRented()+" jours\n");
 		
-		Movie m3 = new Movie("Star Wars III",3);
+		Movie m3 = new Movie("Star Wars III",0);
 		Rental rental3 = new Rental(m3,4);
 		cust1.addRental(rental3);
 		
