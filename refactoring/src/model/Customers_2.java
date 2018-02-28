@@ -13,11 +13,10 @@ public class Customers_2 extends Customers {
 	public String statement(){
 	double totalAmount = 0;
 	DefaultPricing price = new DefaultPricing();
-	//Vector _rentals = new Vector();
 	Enumeration rentals=_rentals.elements();
 	int pfd = price.pointDeFidelite(rentals);
 	rentals=_rentals.elements();
-	String result = "Rental Record for "+getName()+"\n";
+	String result = "Rental Record for "+getName()+"\n"; // Using StringBuffer
 	while (rentals.hasMoreElements()){
 		double thisAmount;
 		Rental each=(Rental) rentals.nextElement();
@@ -32,4 +31,24 @@ public class Customers_2 extends Customers {
 	    " frequent renter points";
 	return result;
     }
+	
+	public String statementhtml(){
+		double totalAmount = 0;
+		DefaultPricing price = new DefaultPricing();
+		Enumeration rentals=_rentals.elements();
+		int pfd = price.pointDeFidelite(rentals);
+		rentals=_rentals.elements();
+		String result = "<html><br><body><br>Rental Record for "+getName()+"<br>"; // Using StringBuffer
+		while (rentals.hasMoreElements()){
+			double thisAmount;
+			Rental each=(Rental) rentals.nextElement();
+			thisAmount=each.getAmount(each.getMovie());
+			result +="<br>" + each.getMovie().getTitle()+"<br>"+
+			    String.valueOf(thisAmount) +"<br>";
+			totalAmount+=thisAmount;
+		    }
+		result += "Amount owned is " + String.valueOf(totalAmount) +"<br>";
+		result += "You earned " + String.valueOf(pfd) +" frequent renter points<br></body></html>";
+		return result;
+	    }
 }

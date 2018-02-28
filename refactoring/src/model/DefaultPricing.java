@@ -9,12 +9,9 @@ public class DefaultPricing implements Pricing {
 
 	public double Price(int days, double fee, double price_day) {
 		double amount = fee;
-		//System.out.println("fee = "+fee);
 		double movie_type = fee == 2 ? 2 : fee == 1.5 ? 3 : fee == 0 ? 0 : 0 ;
-		//System.out.println("movie_type = "+movie_type);
 		if(days > movie_type)
 			amount += (days - movie_type) * price_day;
-		//System.out.println("amount = "+amount);
 		return amount;
 	}
 
@@ -28,5 +25,21 @@ public class DefaultPricing implements Pricing {
 			    p++;
 		}
 		return p;
+	}
+	
+	public Object clone() {
+		//Object o = null;
+		DefaultPricing dp = null;
+		try {
+			// On récupère l'instance à renvoyer par l'appel de la 
+			// méthode super.clone()
+			dp = (DefaultPricing)super.clone();
+		} catch(CloneNotSupportedException cnse) {
+			// Ne devrait jamais arriver car nous implémentons 
+			// l'interface Cloneable
+			cnse.printStackTrace(System.err);
+		}
+		// on renvoie le clone
+		return dp;
 	}
 }

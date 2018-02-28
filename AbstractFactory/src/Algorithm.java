@@ -1,5 +1,5 @@
 
 public interface Algorithm {
-	String getName();
-	double getVal(int val);
+	public String getName();
+	public double getVal(int val);
 }
