@@ -22,13 +22,13 @@ public class UIExample extends Application {
         grid1.setGridLinesVisible(true); // Useful for debug
 
         // Create and add text to the grid
-        Text header = new Text("Number one");
+        Text header = new Text("Rental record for");
         grid1.add(header, 0, 0);
 
         // This text is adjusted through CSS
-        Text another = new Text("Number two");
+        Text another = new Text("Joe");
         another.setStyle("-fx-font: 24 arial;");
-        grid1.add(another, 1, 1);
+        grid1.add(another, 1, 0);
 
         // Build a second grid
         GridPane grid2 = new GridPane();
@@ -40,9 +40,16 @@ public class UIExample extends Application {
         grid2.setPadding(new Insets(0, 10, 0, 10));
 
         // Simpler API only for rows
-        grid2.addRow(0, new Text("Row one"));
-        grid2.addRow(1, new Text("Row two"));
-        grid2.addColumn(1, new Text("Col three"));
+        grid2.addRow(0, new Text("Rental 1"));
+        grid2.addRow(1, new Text("Rental 2"));
+        grid2.addRow(2, new Text("Rental 3"));
+        grid2.addRow(3, new Text("Amount owned is"));
+        grid2.addRow(4, new Text("You earned"));
+        grid2.addColumn(1, new Text("12"));
+        grid2.addColumn(1, new Text("9"));
+        grid2.addColumn(1, new Text("15"));
+        grid2.addColumn(1, new Text("46"));
+        grid2.addColumn(1, new Text("4"));
 
         // Put the two grids in a column
         VBox col = new VBox();
