@@ -1,4 +1,3 @@
-package Builder;
 
 
 public interface PriceCode extends Cloneable {

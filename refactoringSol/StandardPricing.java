@@ -1,4 +1,3 @@
-package Builder;
 
 public class StandardPricing implements PriceCode {
 	private double fixedPrice, daysOfPackage, extraPrice;

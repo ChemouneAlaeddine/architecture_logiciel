@@ -1,11 +1,10 @@
-package Builder;
 
 import java.util.*;
 
 public class Customer
 {
 	private String _name;
-	protected Set<Rental> _rentals = new TreeSet<Rental>();
+	private Set<Rental> _rentals = new TreeSet<Rental>();
 
 	public Customer(String name)
 	{
