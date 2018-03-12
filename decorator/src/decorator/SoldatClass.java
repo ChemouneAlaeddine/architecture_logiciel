@@ -1,19 +1,14 @@
 package decorator;
 
-public class SoldatClass implements Soldat {
+public abstract class SoldatClass implements Soldat {
 
+	public String name;
 	private int attacking;
 	private int defending;
 	private boolean isalive;
-	private boolean bouclier;
-	private boolean epee;
 	
 	public SoldatClass() {
-		this.attacking = 5;
-		this.defending = 5;
 		this.isalive = true;
-		this.bouclier = false;
-		this.epee = false;
 	}
 	
 	@Override
@@ -23,21 +18,17 @@ public class SoldatClass implements Soldat {
 
 	@Override
 	public int strike() {
+		System.out.println(this.name+" porte un coup ");
 		return this.attacking;
 	}
 
 	@Override
 	public void parry(int strike) {
 		if(strike > this.defending)
+			this.defending-=2;
+		else
+			this.defending--;
+		if(this.defending < 0)
 			this.isalive = false;
 	}
-	
-	public void setBouclier() {
-		this.bouclier = true;
-	}
-	
-	public void setEpee() {
-		this.epee = true;
-	}
-
 }

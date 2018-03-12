@@ -1,8 +1,10 @@
 package decorator;
 
-public class SoldatDecorator extends SoldatClass {
+public abstract class SoldatDecorator extends SoldatClass {
 	
 	protected SoldatClass soldate;
+	private boolean epee = false;
+	private boolean bouclier = false;
 	
 	public SoldatDecorator(SoldatClass s) {
 		this.soldate = s;
@@ -23,13 +25,13 @@ public class SoldatDecorator extends SoldatClass {
 		this.soldate.parry(strike);
 	}
 	
-	@Override
 	public void setBouclier() {
-		this.soldate.setBouclier();
+		System.out.println(this.soldate.name+" recupere un bouclier\n");
+		this.bouclier = true;
 	}
 	
-	@Override
 	public void setEpee() {
-		this.soldate.setEpee();
+		System.out.println(this.soldate.name+" recupere une epee\n");
+		this.epee = true;
 	}
 }
