@@ -2,47 +2,43 @@ package soldier.core;
 
 import Exceptions.*;
 
-public abstract class UnitSimple {
-	
-	private BehaviorSoldier soldier;
+public abstract class UnitSimple extends BehaviorExtension {
 	
 	private float m_attack;
 	private float m_defense;
 	private static float wear_ratio = 2.5f;
+	
+	private float m_wear = 10;
 	
 	private boolean hasSword = false;
 	private boolean hasShield = false;
 	private int nbarms = 0;
 	
 	UnitSimple(BehaviorSoldier s) {
-		this.soldier = s;
+		super(s);
 	}
 
-	public String getName() {
-		return this.soldier.getName();
-	}
-	
-	public float getHealthPoints() {
-		return this.soldier.getHealthPoints();
-	}
-	
-	public boolean alive() {
-		return this.soldier.alive();
-	}
-	
-	public void heal() {
-		this.soldier.heal();
-	}
-	
+	@Override
 	public float strike() {
-		return soldier.strike();
+		float force = soldier.strike() + m_attack;
+		m_wear -= wear_ratio * Math.min(m_wear, force) / m_wear;
+		return force;
 	}
 
+	@Override
 	public float parry(float force) {
-		return soldier.parry(force);
+		float taken_force;
+		if(m_defense >= 0)
+			taken_force = force / (1 + m_defense);
+		else
+			taken_force = force;
+
+		m_wear -= wear_ratio * Math.min(m_wear, taken_force) / m_wear;
+		return soldier.parry(taken_force);
 	}
 	
 	//================
+	
 	public void addSword() throws ImpossibleExtensionException {
 		if(this.hasSword == false) {
 			this.soldier = new StdExtension(this.m_attack+wear_ratio,this.m_defense,this.soldier);
@@ -52,6 +48,17 @@ public abstract class UnitSimple {
 		}
 	}
 	
+	public void takeSword() throws ImpossibleExtensionException {
+		if(this.hasSword == true) {
+			this.soldier = new StdExtension(this.m_attack-wear_ratio,this.m_defense,this.soldier);
+			this.hasSword = false;
+		}else {
+			throw new ImpossibleExtensionException();
+		}
+	}
+	
+	//==============
+	
 	public void addShield() throws ImpossibleExtensionException {
 		if(this.hasShield == false) {
 			this.soldier = new StdExtension(this.m_attack,this.m_defense+wear_ratio,this.soldier);
@@ -60,7 +67,18 @@ public abstract class UnitSimple {
 			throw new ImpossibleExtensionException();
 		}
 	}
+	
+	public void takeShield() throws ImpossibleExtensionException {
+		if(this.hasShield == true) {
+			this.soldier = new StdExtension(this.m_attack,this.m_defense-wear_ratio,this.soldier);
+			this.hasShield = false;
+		}else {
+			throw new ImpossibleExtensionException();
+		}
+	}
+	
 	//===============
+	
 	public void addEquipement(Equipment eq) throws ImpossibleExtensionException {
 		try {
 			eq.get();
@@ -75,25 +93,7 @@ public abstract class UnitSimple {
 			throw new ImpossibleExtensionException();
 		}
 	}
-	//==============
-	public void takeSword() throws ImpossibleExtensionException {
-		if(this.hasSword == true) {
-			this.soldier = new StdExtension(this.m_attack-wear_ratio,this.m_defense,this.soldier);
-			this.hasSword = false;
-		}else {
-			throw new ImpossibleExtensionException();
-		}
-	}
 	
-	public void takeShield() throws ImpossibleExtensionException {
-		if(this.hasShield == true) {
-			this.soldier = new StdExtension(this.m_attack,this.m_defense-wear_ratio,this.soldier);
-			this.hasShield = false;
-		}else {
-			throw new ImpossibleExtensionException();
-		}
-	}
-	//==============
 	public void removeEquipement(Equipment eq) throws ImpossibleExtensionException {
 		try {
 			eq.let();
@@ -104,6 +104,8 @@ public abstract class UnitSimple {
 			this.m_attack -= eq.getAttacking();
 			this.m_defense -= eq.getDefending();
 			this.nbarms--;
+		}else {
+			throw new ImpossibleExtensionException();
 		}
 	}
 }

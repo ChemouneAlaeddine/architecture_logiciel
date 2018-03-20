@@ -3,7 +3,7 @@
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="soldier.core.LogPowBehavior" project="soldierDecoratorSol" 
     file="/soldierDecoratorSol/src/soldier/core/LogPowBehavior.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="369" y="160"/>    
+    <position height="275" width="213" x="80" y="183"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <interface id="2" language="java" name="soldier.core.Equipment" project="soldierDecoratorSol" 
     file="/soldierDecoratorSol/src/soldier/core/Equipment.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1145" y="475"/>    
+    <position height="131" width="121" x="1008" y="498"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </interface>  
   <class id="3" language="java" name="soldier.core.InfantaryMan" project="soldierDecoratorSol" 
     file="/soldierDecoratorSol/src/soldier/core/InfantaryMan.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="72" y="512"/>    
+    <position height="77" width="99" x="437" y="885"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="soldier.core.UnitSimple" project="soldierDecoratorSol" 
     file="/soldierDecoratorSol/src/soldier/core/UnitSimple.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="122" y="196"/>    
+    <position height="347" width="202" x="506" y="498"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </class>  
   <class id="5" language="java" name="soldier.core.BehaviorExtension" project="soldierDecoratorSol" 
     file="/soldierDecoratorSol/src/soldier/core/BehaviorExtension.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="863" y="133"/>    
+    <position height="221" width="201" x="576" y="183"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <interface id="6" language="java" name="soldier.core.BehaviorSoldier" project="soldierDecoratorSol" 
     file="/soldierDecoratorSol/src/soldier/core/BehaviorSoldier.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="498" y="569"/>    
+    <position height="167" width="133" x="333" y="498"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,7 +57,7 @@
   </interface>  
   <class id="7" language="java" name="soldier.core.HorseMan" project="soldierDecoratorSol" 
     file="/soldierDecoratorSol/src/soldier/core/HorseMan.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="206" y="510"/>    
+    <position height="77" width="89" x="576" y="885"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -66,7 +66,7 @@
   </class>  
   <class id="8" language="java" name="soldier.core.Shield" project="soldierDecoratorSol" 
     file="/soldierDecoratorSol/src/soldier/core/Shield.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1064" y="124"/>    
+    <position height="203" width="121" x="847" y="183"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -75,7 +75,7 @@
   </class>  
   <class id="9" language="java" name="soldier.core.StdExtension" project="soldierDecoratorSol" 
     file="/soldierDecoratorSol/src/soldier/core/StdExtension.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="873" y="502"/>    
+    <position height="185" width="220" x="748" y="498"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -84,7 +84,7 @@
   </class>  
   <class id="10" language="java" name="soldier.core.Sword" project="soldierDecoratorSol" 
     file="/soldierDecoratorSol/src/soldier/core/Sword.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1226" y="124"/>    
+    <position height="203" width="121" x="1008" y="183"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -93,7 +93,7 @@
   </class>  
   <class id="11" language="java" name="soldier.core.ConstBehavior" project="soldierDecoratorSol" 
     file="/soldierDecoratorSol/src/soldier/core/ConstBehavior.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="620" y="160"/>    
+    <position height="275" width="203" x="333" y="183"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -101,52 +101,48 @@
     </display>  
   </class>  
   <generalization id="12">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="4"/>  
-  </generalization>  
-  <realization id="13">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <generalization id="14">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="5"/>  
-  </generalization>  
-  <association id="15">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="16" name="soldier"/>      
-      <multiplicity id="17" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="18">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <realization id="19">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="2"/>  
-  </realization>  
-  <generalization id="20">    
     <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="4"/>  
   </generalization>  
-  <association id="21">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="22" name="soldier"/>      
-      <multiplicity id="23" minimum="0" maximum="1"/>    
+  <association id="13">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="14" name="soldier"/>      
+      <multiplicity id="15" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <realization id="24">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="6"/>  
-  </realization>  
-  <realization id="25">    
+  <realization id="16">    
     <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="2"/>  
+  </realization>  
+  <realization id="17">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="2"/>  
+  </realization>  
+  <generalization id="18">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="4"/>  
+  </generalization>  
+  <realization id="19">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <generalization id="20">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <realization id="21">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <generalization id="22">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <realization id="23">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="6"/>  
   </realization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    

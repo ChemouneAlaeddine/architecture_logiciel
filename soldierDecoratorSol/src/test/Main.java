@@ -17,5 +17,4 @@ public class Main {
 		   im.addSword(); // Lève une exception car deux armes maximum
 		  }catch(ImpossibleExtensionException e) {}
 		}
-
 }
