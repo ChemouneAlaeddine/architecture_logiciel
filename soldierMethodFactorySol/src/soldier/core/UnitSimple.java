@@ -6,7 +6,7 @@ package soldier.core;
 
 import java.util.Iterator;
 
-public abstract class UnitSimple {
+public abstract class UnitSimple implements Unit {
 
 	private BehaviorSoldier behavior;
 	private String name;
@@ -43,7 +43,8 @@ public abstract class UnitSimple {
 		float result = behavior.strike();
 		return result;
 	}
-
+	
+	@Override
 	public void addEquipment(Equipment w) {
 		behavior = w.createExtension(behavior);
 	}
