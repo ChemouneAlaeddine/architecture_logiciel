@@ -1,21 +1,20 @@
 package soldier.core;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-
-import javax.swing.text.html.HTMLDocument.Iterator;
 
 public class Army implements Unit {
 	
 	private String name;
-	private List<UnitSimple> groupe = new ArrayList<UnitSimple>();
-	private Iterator itr = (Iterator) groupe.iterator();
+	private List<Unit> groupe = new ArrayList<Unit>();
+	private Iterator<Unit> itr = groupe.iterator();
 	
 	public Army() {}
 	
 	@Override
 	public String getName() {
-		return this.getName();
+		return this.name;
 	}
 	
 	@Override
@@ -24,21 +23,34 @@ public class Army implements Unit {
 	}
 	
 	@Override
-	public float strike() {
+	public float parry(float force) {
+		float part = force / groupe.size();
+		float reste = force % groupe.size();
 		return 0;
 	}
 	
 	@Override
-	public void add(Unit us) {
-		groupe.add((UnitSimple) us);
+	public float strike() {
+		int result = 0;
+		while(itr.hasNext()) {
+			Unit unit = itr.next();
+			result += unit.strike();
+		}
+		return result;
 	}
 	
-	@Override
+	//@Override
+	public void add(Unit us) {
+		groupe.add((Unit) us);
+	}
+	
+	//@Override
 	public void remove(Unit us) {
 		groupe.remove(us);
 	}
-	
-	public Iterator getChildren() {
+
+	//@Override
+	public Iterator<Unit> getChildren() {
 		return this.itr;
 	}
 }

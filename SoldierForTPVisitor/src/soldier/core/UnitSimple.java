@@ -1,12 +1,13 @@
 /**
  * D. Auber & P. Narbel
- * Solution TD Architecture Logicielle 2016 Universitï¿½ Bordeaux.
+ * Solution TD Architecture Logicielle 2016 Université Bordeaux.
  */
 package soldier.core;
 
+import java.util.Collections;
 import java.util.Iterator;
 
-public abstract class UnitSimple implements Unit {
+public abstract class UnitSimple extends UnitObservableAbstract {
 
 	private BehaviorSoldier behavior;
 	private String name;
@@ -15,21 +16,23 @@ public abstract class UnitSimple implements Unit {
 		this.behavior = behavior;
 		this.name = name;
 	}
-	
-	public UnitSimple() {}
 
+	@Override
 	public String getName() {
 		return name;
 	}
 
+	@Override
 	public float getHealthPoints() {
 		return behavior.getHealthPoints();
 	}
 
+	@Override
 	public boolean alive() {
 		return behavior.alive();
 	}
 
+	@Override
 	public void heal() {
 		behavior.heal();
 	}
@@ -37,6 +40,7 @@ public abstract class UnitSimple implements Unit {
 	@Override
 	public float parry(float force) {
 		float result = behavior.parry(force);
+		notifyObservers();
 		return result;
 	}
 
@@ -45,12 +49,13 @@ public abstract class UnitSimple implements Unit {
 		float result = behavior.strike();
 		return result;
 	}
-	
+
 	@Override
 	public void addEquipment(Equipment w) {
 		behavior = w.createExtension(behavior);
 	}
 
+	@Override
 	public void removeEquipment(Equipment w) {
 		BehaviorSoldier current = behavior;
 		BehaviorSoldier previous = behavior;
@@ -65,7 +70,8 @@ public abstract class UnitSimple implements Unit {
 		}
 	}
 
-	public Iterator<Equipment> getWeapons() {
+	@Override
+	public Iterator<Equipment> getEquipments() {
 		return new Iterator<Equipment>() {
 			BehaviorSoldier current = behavior;
 
@@ -83,9 +89,23 @@ public abstract class UnitSimple implements Unit {
 		};
 	}
 
+	@Override
+	final public Iterator<Unit> subUnits() {
+		return Collections.emptyIterator();
+	}
+
+	@Override
+	final public void addUnit(Unit au) {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	final public void removeUnit(Unit au) {
+	}
+
 	public int nbWeapons() {
 		int result = 0;
-		for (Iterator<Equipment> it = getWeapons(); it.hasNext(); it.next())
+		for (Iterator<Equipment> it = getEquipments(); it.hasNext(); it.next())
 			++result;
 		return result;
 	}
